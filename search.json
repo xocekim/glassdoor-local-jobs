@@ -1,0 +1,16 @@
+{
+    "operationName": "JobsSearchAndroid",
+    "query": "query JobsSearchAndroid($adSlotName: String, $pageTypeEnum: PageTypeEnum, $searchParams: SearchParams, $includeIndeedCtk: Boolean!) { jobListings(contextHolder: { adSlotName: $adSlotName pageTypeEnum: $pageTypeEnum searchParams: $searchParams } ) { jobListings { jobview { __typename ...JobViewFragment } } paginationCursors { __typename ...PaginationCursorFragment } indeedCtk @include(if: $includeIndeedCtk) companyFilterOptions { id shortName } filterOptions totalJobsCount } }  fragment JobViewFragment on JobView { job { listingId jobTitleText } header { adOrderId ageInDays easyApply expired locId locationName locationType normalizedJobTitle employerNameFromSearch employer { name squareLogoUrl id } payPeriod payPercentile90 payPercentile50 payPercentile10 hourlyWagePayPercentile { payPercentile90 payPercentile50 payPercentile10 } monthlyPayPercentile { payPercentile90 payPercentile50 payPercentile10 } rating salarySource savedJobId sponsored payCurrency urgencySignal { labelKey } jobViewUrl jobCountryId jobResultTrackingKey } overview { primaryIndustry { industryId industryName sectorId sectorName } } gaTrackerData { requiresTracking trackingUrl } }  fragment PaginationCursorFragment on PaginationCursor { cursor pageNumber }",
+    "variables": {
+        "adSlotName": "mobileapp-search-jobs-lsr-mobile",
+        "includeIndeedCtk": false,
+        "searchParams": {
+            "filterParams": [],
+            "keyword": "",
+            "locationId": 0,
+            "locationType": "CITY",
+            "searchType": "SR",
+            "typedLocationStr": ""
+        }
+    }
+}
