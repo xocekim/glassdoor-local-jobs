@@ -1,0 +1,8 @@
+[Unit]
+Description=glassdoor jobs timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/pi/glassdoor-local-jobs/venv/bin/python /home/pi/glassdoor-local-jobs/main.py
+WorkingDirectory=/home/pi/glassdoor-local-jobs
+
